@@ -6,11 +6,11 @@
 /*   By: gleger <gleger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/30 19:57:43 by gleger            #+#    #+#             */
-/*   Updated: 2014/05/07 00:46:41 by gleger           ###   ########.fr       */
+/*   Updated: 2014/05/07 01:53:24 by gleger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include <pipex.h>
 
 void	ft_malloc_error(const char *s)
 {

@@ -6,11 +6,11 @@
 /*   By: gleger <gleger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/30 15:23:44 by gleger            #+#    #+#             */
-/*   Updated: 2014/05/07 00:42:49 by gleger           ###   ########.fr       */
+/*   Updated: 2014/05/07 01:53:13 by gleger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include <pipex.h>
 
 void	ft_write_to_file(t_cmd *arg)
 {

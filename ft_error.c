@@ -6,11 +6,11 @@
 /*   By: gleger <gleger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/30 13:02:31 by gleger            #+#    #+#             */
-/*   Updated: 2014/05/07 00:42:57 by gleger           ###   ########.fr       */
+/*   Updated: 2014/05/07 01:53:32 by gleger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include <pipex.h>
 
 void	ft_fork_error(void)
 {
