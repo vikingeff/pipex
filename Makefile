@@ -12,44 +12,37 @@
 
 NAME = pipex
 
-LIBNAME = libpipex.a
-
-SRCS = srcs/ft_check_things.c \
-		srcs/ft_environ.c \
-		srcs/ft_error.c \
-		srcs/ft_pipe.c \
-		srcs/ft_error_2.c \
-		srcs/ft_puts.c
+SRCS = ft_check_things.c \
+		ft_environ.c \
+		ft_error.c \
+		ft_pipe.c \
+		ft_error_2.c \
+		ft_puts.c \
+		main.c
 
 OBJ = $(SRCS:.c=.o)
 
-INCLUDE = includes/
-
-INCLUDEPRINTF = srcs/printf/includes
-
-INCLUDELIBFT = srcs/libft/
-
-FLAG = -Wall -Wextra -Werror -ansi -pedantic
+FLAG = -Wall -Wextra -Werror -O3 -pedantic -I ./includes/
 
 all: $(NAME)
 
-$(NAME): $(LIBNAME)
-	@gcc $(FLAG) -o $(NAME) main.c -L./ -lpipex -I$(INCLUDE)
+$(NAME): $(OBJ)
+	@echo "\033[1;35;m[Linking] \t\t\033[0m: " | tr -d '\n'
+	gcc $(FLAG) -o $@ $^ 
+	@echo "\033[1;32;m[Success] \t\t\t\033[0m"
 
-$(LIBNAME): $(OBJ)
-	@ar rc $@ $^
-	@ranlib $(LIBNAME)
-
-%.o: %.c
-	@gcc $(FLAG) -c -o $@ $^ -I$(INCLUDE)
+%.o: %.c ./includes/pipex.h
+	@echo "\033[1;36;m[Compiling $<] \t\033[0m: " | tr -d '\n'
+	$(CC) $(FLAG) -c $<
 
 clean:
-	@/bin/rm -f $(OBJ)
-	@/bin/rm -f $(LIBNAME)
+	@echo "\033[0;33;m[Cleaning] \t\t\033[0m: " | tr -d '\n'
+	rm -f $(OBJ)
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	@echo "\033[0;31;m[Deleting $(NAME)] \t\033[0m: " | tr -d '\n'
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: re clean fclean all
+.PHONY: all clean fclean re
