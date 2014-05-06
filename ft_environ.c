@@ -6,11 +6,11 @@
 /*   By: gleger <gleger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/30 16:18:32 by gleger            #+#    #+#             */
-/*   Updated: 2014/05/07 00:43:04 by gleger           ###   ########.fr       */
+/*   Updated: 2014/05/07 01:34:28 by gleger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include <pipex.h>
 
 void	mod_path(char **path)
 {
@@ -33,7 +33,8 @@ char	**ft_getenv(char *s, char **env)
 	int		j;
 	char	**path;
 
-	i = j = 0;
+	i = 0;
+	j = 0;
 	while (env[i] != NULL)
 	{
 		if (ft_strncmp(s, env[i], ft_strlen(s)) == 0)

@@ -6,7 +6,7 @@
 /*   By: gleger <gleger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/30 11:56:38 by gleger            #+#    #+#             */
-/*   Updated: 2014/05/07 01:28:42 by gleger           ###   ########.fr       */
+/*   Updated: 2014/05/07 01:38:41 by gleger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ int				ft_strichr(char *str, int l);
 char			*ft_strjoin(char const *s1, char const *s2);
 int				ft_strncmp(const char *str, const char *str2, size_t n);
 char			**ft_strsplit(char const *s, char c);
-/*pouet*/
+
 #endif

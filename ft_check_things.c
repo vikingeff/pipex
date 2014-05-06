@@ -6,11 +6,11 @@
 /*   By: gleger <gleger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/30 13:07:51 by gleger            #+#    #+#             */
-/*   Updated: 2014/05/07 00:43:11 by gleger           ###   ########.fr       */
+/*   Updated: 2014/05/07 01:34:34 by gleger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include <pipex.h>
 
 int		ft_check_file(char *s, int amode)
 {
@@ -115,10 +115,13 @@ int		ft_check_files_and_commands(t_cmd *arg)
 	int		j;
 	int		k;
 
-	i = j = k = 0;
+	i = 0;
+	j = 0;
+	k = 0;
 	while (arg->av[i])
 	{
-		j = k = 0;
+		j = 0;
+		k = 0;
 		if (access(arg->av[i], F_OK) == 0)
 		{
 			if (access(arg->av[i], W_OK) == 0)

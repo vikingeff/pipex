@@ -18,6 +18,8 @@ SRCS = ft_check_things.c \
 		ft_pipe.c \
 		ft_error_2.c \
 		ft_puts.c \
+		ft_tools.c \
+		ft_other.c \
 		main.c
 
 OBJ = $(SRCS:.c=.o)

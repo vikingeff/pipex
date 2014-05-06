@@ -6,7 +6,7 @@
 /*   By: gleger <gleger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/30 12:04:57 by gleger            #+#    #+#             */
-/*   Updated: 2014/05/07 00:56:36 by gleger           ###   ########.fr       */
+/*   Updated: 2014/05/07 01:32:25 by gleger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	ft_copy_environ(char **environ, char ***env)
 	int		i;
 	int		j;
 
-	i = j = 0;
+	i = 0;
+	j = 0;
 	while (environ[i] != NULL)
 		i++;
 	if (!((*env) = (char**)malloc(sizeof(char*) * (i + 1))))
