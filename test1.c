@@ -1,5 +1,0 @@
-boo
-cachuete
-pfff
-:wq
-
