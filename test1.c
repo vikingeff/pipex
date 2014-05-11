@@ -1,0 +1,13 @@
+boo
+cachuete
+pfff
+:wq
+pouet
+pouet
+pfff
+pff
+pf
+boob
+pfff
+boobpoff
+pffboob

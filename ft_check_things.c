@@ -6,7 +6,7 @@
 /*   By: gleger <gleger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/30 13:07:51 by gleger            #+#    #+#             */
-/*   Updated: 2014/05/07 01:34:34 by gleger           ###   ########.fr       */
+/*   Updated: 2014/05/11 19:39:52 by gleger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,17 @@ char	*ft_check_command_2(t_cmd *arg, int amode)
 	int		retf;
 	int		reta;
 
-	i = 0;
+	i = -1;
+	reta = 0;
+	retf = 0;
 	if ((path = ft_getenv("PATH", arg->env)) == NULL)
 		ft_command_error();
-	while (path[i] != NULL)
+	while (path[++i] != NULL)
 	{
 		join = ft_strjoin(path[i], arg->cmd2[0]);
 		if ((retf = access(join, F_OK)) == 0)
-		{
 			if ((reta = access(join, amode)) == 0)
 				return (join);
-		}
-		i++;
 	}
 	if (retf == -1)
 		ft_exist_error(arg->cmd2[0]);
@@ -89,18 +88,17 @@ char	*ft_check_command(t_cmd *arg, int amode)
 	int		retf;
 	int		reta;
 
-	i = 0;
+	i = -1;
+	reta = 0;
+	retf = 0;
 	if ((path = ft_getenv("PATH", arg->env)) == NULL)
 		ft_command_error();
-	while (path[i] != NULL)
+	while (path[++i] != NULL)
 	{
 		join = ft_strjoin(path[i], arg->cmd1[0]);
 		if ((retf = access(join, F_OK)) == 0)
-		{
 			if ((reta = access(join, amode)) == 0)
 				return (join);
-		}
-		i++;
 	}
 	if (retf == -1)
 		ft_exist_error(arg->cmd1[0]);
@@ -115,10 +113,10 @@ int		ft_check_files_and_commands(t_cmd *arg)
 	int		j;
 	int		k;
 
-	i = 0;
+	i = -1;
 	j = 0;
 	k = 0;
-	while (arg->av[i])
+	while (arg->av[++i])
 	{
 		j = 0;
 		k = 0;
@@ -132,7 +130,6 @@ int		ft_check_files_and_commands(t_cmd *arg)
 			ft_exist_error(arg->av[i]);
 		if (k != 1)
 			ft_right_error(arg->av[i]);
-		i++;
 	}
 	return (0);
 }

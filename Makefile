@@ -6,11 +6,13 @@
 #    By: gleger <gleger@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/30 11:26:07 by gleger            #+#    #+#              #
-#    Updated: 2014/05/06 21:44:01 by drabahi          ###   ########.fr        #
+#    Updated: 2014/05/11 19:19:00 by gleger           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = pipex
+
+CC = clang
 
 SRCS = ft_check_things.c \
 		ft_environ.c \
@@ -30,7 +32,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "\033[1;35;m[Linking] \t\t\033[0m: " | tr -d '\n'
-	gcc $(FLAG) -o $@ $^ 
+	$(CC) $(FLAG) -o $@ $^ 
 	@echo "\033[1;32;m[Success] \t\t\t\033[0m"
 
 %.o: %.c ./includes/pipex.h
